@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  pdfmt:
+    image: byaidu/pdf2zh:v1.8.9
+    container_name: pdfmt
+    restart: unless-stopped
+    ports:
+      - "7860:7860"
+    volumes:
+      - ./input:/input
+      - ./output:/output
+
