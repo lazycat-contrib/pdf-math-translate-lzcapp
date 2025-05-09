@@ -1,7 +1,7 @@
 lzc-sdk-version: "0.1"
 name: PDFMathTranslate
 package: cloud.lazycat.app.pdf-math-translate
-version: 1.9.6
+version: 1.9.9
 description: 一个用于 PDF 科学论文的翻译工具，旨在保留文档的排版格式。
 homepage: https://github.com/Byaidu/PDFMathTranslate
 author: Byaidu
@@ -17,7 +17,7 @@ application:
 services:
   pdfmt:
     container_name: pdfmt
-    image: docker.hlmirror.com/byaidu/pdf2zh:1.9.6
+    image: docker.1ms.run/byaidu/pdf2zh:1.9.9
     binds:
       - /lzcapp/var/input:/input
       - /lzcapp/var/output:/output
