@@ -8,16 +8,12 @@ author: Byaidu
 application:
   subdomain: pdf-math-translate
   background_task: true
-  multi_instance: false
-  gpu_accel: false
-  kvm_accel: false
-  usb_accel: false
   routes:
     - /=http://pdfmt:7860/
 services:
   pdfmt:
     container_name: pdfmt
-    image: docker.1ms.run/byaidu/pdf2zh:1.9.9
+    image: docker.1ms.run/byaidu/pdf2zh:1.9.10
     binds:
       - /lzcapp/var/input:/input
       - /lzcapp/var/output:/output
