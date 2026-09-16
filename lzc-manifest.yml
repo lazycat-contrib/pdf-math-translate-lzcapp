@@ -7,7 +7,7 @@ application:
 services:
   pdfmt:
     # upstream: byaidu/pdf2zh:1.9.11
-    image: byaidu/pdf2zh:1.9.11
+    image: registry.lazycat.cloud/czyt/byaidu/pdf2zh:725de2320e690d6c
     binds:
       - /lzcapp/var/input:/input
       - /lzcapp/var/output:/output
