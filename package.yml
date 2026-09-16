@@ -1,0 +1,14 @@
+package: cloud.lazycat.app.pdf-math-translate
+version: 1.9.11
+name: PDFMathTranslate
+description: "一个用于 PDF 科学论文的翻译工具，旨在保留文档的排版格式。"
+min_os_version: "1.5.0"
+homepage: https://github.com/Byaidu/PDFMathTranslate
+author: Byaidu
+locales:
+  zh:
+    description: "一个用于 PDF 科学论文的翻译工具，旨在保留文档的排版格式。"
+    name: PDFMathTranslate
+  en:
+    description: "A translation tool for PDF scientific papers that preserves the original document layout."
+    name: PDFMathTranslate

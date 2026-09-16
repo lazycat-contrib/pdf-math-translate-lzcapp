@@ -1,0 +1,38 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: .lazycat-build/pdf-math-translate.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: pdfmt
+build:
+  run_buildscript: false
+images:
+  # 主应用：上游有完整三段 SemVer tag（当前最高 1.9.11），排除 dev/latest 等别名
+  - id: pdfmt
+    target: service
+    service: pdfmt
+    source: byaidu/pdf2zh
+    channel: stable
+    sort: semver
+    tag_regex: '^\d+\.\d+\.\d+$'
+    delivery:
+      mode: lazycat
+stores:
+  official:
+    enabled: true
+    skip_if_version_exists: true
+    changelog_locales: [zh, en]
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: PDFMathTranslate
+    summary: "一个用于 PDF 科学论文的翻译工具，保留文档的排版格式"

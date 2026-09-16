@@ -1,0 +1,13 @@
+application:
+  subdomain: pdf-math-translate
+  background_task: true
+  upstreams:
+    - location: /
+      backend: http://pdfmt:7860/
+services:
+  pdfmt:
+    # upstream: byaidu/pdf2zh:1.9.11
+    image: byaidu/pdf2zh:1.9.11
+    binds:
+      - /lzcapp/var/input:/input
+      - /lzcapp/var/output:/output
